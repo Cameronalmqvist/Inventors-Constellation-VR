@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
 
             GameObject star= Instantiate(stars[Random.Range(0, 18)], points[Random.Range(0,8)]);
             star.transform.localPosition = Vector3.zero;
-            star.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
+            star.transform.Rotate(transform.forward);
             timer -= beat;
 
         }
