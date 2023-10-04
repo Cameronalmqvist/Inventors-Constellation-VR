@@ -455,12 +455,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {fileID: 42737093}
+  - {fileID: 1892763383}
+  - {fileID: 629493468}
   stars:
   - {fileID: 2402597217450981469, guid: 54c525d2d0b6b2943985f969ab027357, type: 3}
+  - {fileID: 3878360529659334335, guid: 8f64a332e06630546b463f74630fa85b, type: 3}
   Star:
   - {fileID: 2402597217450981469, guid: 54c525d2d0b6b2943985f969ab027357, type: 3}
-  beat: 5
+  - {fileID: 3878360529659334335, guid: 8f64a332e06630546b463f74630fa85b, type: 3}
+  interval: 5
 --- !u!1 &629493467
 GameObject:
   m_ObjectHideFlags: 0
