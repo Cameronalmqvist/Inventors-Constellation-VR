@@ -11,10 +11,12 @@ public class movement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        speed = 0.2f;
-      transform.position+=Time.deltaTime*transform.forward*speed;  
+       
+        Vector3 targetDirection = Vector3.Normalize(Vector3.zero - transform.position);
+
+        transform.position += targetDirection * speed * Time.deltaTime;
     }
 }
