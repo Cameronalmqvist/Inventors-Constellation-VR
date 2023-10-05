@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546435556}
   - component: {fileID: 546435557}
-  - component: {fileID: 546435558}
+  - component: {fileID: 546435559}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -442,7 +442,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &546435558
+--- !u!114 &546435559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,19 +451,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 546435554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c541ceb1b5cc1274aa462be056974bf6, type: 3}
+  m_Script: {fileID: 11500000, guid: c62ef952565feb84897f94f9f9e921d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1892763383}
   - {fileID: 629493468}
+  - {fileID: 2017658862}
+  - {fileID: 1990056086}
+  - {fileID: 42737093}
+  - {fileID: 1272890228}
+  - {fileID: 2066264288}
+  - {fileID: 1544493256}
+  - {fileID: 1368882627}
+  - {fileID: 1934231381}
+  - {fileID: 2121518541}
+  - {fileID: 135732150}
   stars:
-  - {fileID: 2402597217450981469, guid: 54c525d2d0b6b2943985f969ab027357, type: 3}
-  - {fileID: 3878360529659334335, guid: 8f64a332e06630546b463f74630fa85b, type: 3}
-  Star:
-  - {fileID: 2402597217450981469, guid: 54c525d2d0b6b2943985f969ab027357, type: 3}
-  - {fileID: 3878360529659334335, guid: 8f64a332e06630546b463f74630fa85b, type: 3}
-  interval: 5
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
+  - {fileID: 7035812334509076111, guid: 49b00b597ced03a4b82881422145df84, type: 3}
 --- !u!1 &629493467
 GameObject:
   m_ObjectHideFlags: 0
