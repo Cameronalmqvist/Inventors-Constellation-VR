@@ -13,7 +13,7 @@ public class spawner3 : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnStar", 10f, 5f);
+        InvokeRepeating("SpawnStar", 0.01f, 0.01f);
     }
 
     void SpawnStar()
