@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flag
-    second: {fileID: 2100000, guid: 2a131777bfa704946b39324b3467cdab, type: 2}
+    second: {fileID: 2100000, guid: ae3c1ca6031ce5b4095de21700dc847a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
