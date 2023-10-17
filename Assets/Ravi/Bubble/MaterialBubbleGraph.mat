@@ -21,22 +21,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MaterialBubbleGraph
-  m_Shader: {fileID: -6465566751694194690, guid: 84e4b7bfc32522a4fbe75990aabf296e,
+  m_Shader: {fileID: -6465566751694194690, guid: 043ceb7101e31124eb21068d7847cc3a,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 1bc754816e4c85b44a57a92b36344c06, type: 2}
+  m_Parent: {fileID: -876546973899608171, guid: 043ceb7101e31124eb21068d7847cc3a,
+    type: 3}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - DepthOnly
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -45,6 +44,7 @@ Material:
     m_Floats:
     - _Cull: 2
     - _IntersectionDepth: 0.5
+    - _QueueControl: 0
     m_Colors:
     - _IntersectionColour: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
