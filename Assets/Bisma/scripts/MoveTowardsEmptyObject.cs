@@ -11,9 +11,12 @@ public class FloatingOrb : MonoBehaviour
     public float floatSpeed = 1.0f;
     public float minDistanceFromTarget = 0.5f;
 
+    public GameObject canvasPrefab; // Reference to the canvas prefab
+
     private Vector3 floatingDirection;
     private Rigidbody rb;
     private bool isGazedUpon = false;
+    private GameObject canvasInstance; // Instance of the canvas
 
     void Start()
     {
@@ -27,7 +30,9 @@ public class FloatingOrb : MonoBehaviour
         interactable.onHoverEntered.AddListener(OnGazeEnter);
         interactable.onHoverExited.AddListener(OnGazeExit);
 
-        
+        // Instantiate the canvas from the prefab
+        canvasInstance = Instantiate(canvasPrefab, transform.position, Quaternion.identity);
+        canvasInstance.SetActive(false);
     }
 
     void Update()
@@ -50,8 +55,6 @@ public class FloatingOrb : MonoBehaviour
         }
     }
 
-
-
     void OnCollisionEnter(Collision collision)
     {
         if (!isGazedUpon) // Only pick a new direction if not being gazed upon
@@ -59,7 +62,6 @@ public class FloatingOrb : MonoBehaviour
             PickRandomDirection();
         }
     }
-
 
     void PickRandomDirection()
     {
@@ -70,12 +72,34 @@ public class FloatingOrb : MonoBehaviour
     {
         Debug.Log("Gaze Entered");
         isGazedUpon = true;
+        canvasInstance.SetActive(false);
     }
-
 
     void OnGazeExit(XRBaseInteractor interactor)
     {
         Debug.Log("Gaze Exited");
         isGazedUpon = false;
+
+        // Start a coroutine to activate the canvas instance after 5 seconds
+        StartCoroutine(ActivateCanvasDelayed(12.0f));
+    }
+
+    IEnumerator ActivateCanvasDelayed(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        // Activate the canvas instance after the delay
+        canvasInstance.SetActive(true);
+
+        // Start a coroutine to destroy the canvas instance after 4 seconds
+        StartCoroutine(DestroyCanvasDelayed(4.0f));
+    }
+
+    IEnumerator DestroyCanvasDelayed(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        // Destroy the canvas instance after the delay
+        Destroy(canvasInstance);
     }
 }
