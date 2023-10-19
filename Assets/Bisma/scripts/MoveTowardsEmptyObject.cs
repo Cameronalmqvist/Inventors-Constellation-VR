@@ -94,13 +94,13 @@ public class FloatingOrb : MonoBehaviour
         canvasInstance.SetActive(true);
 
         // Start a coroutine to destroy the canvas instance after 4 seconds
-        StartCoroutine(DestroyCanvasDelayed(2.0f));
+        StartCoroutine(DestroyCanvasDelayed(1.0f));
     }
 
     void UpdateCanvasTransform()
     {
-        // Update the canvas instance's position and rotation to match the parent's transform
-        canvasInstance.transform.position = transform.position;
+        // Update the canvas instance's position to be above the parent object
+        canvasInstance.transform.position = transform.position + Vector3.up * 5f; // Adjust the "2f" to set the desired height above the parent.
         canvasInstance.transform.rotation = transform.rotation;
     }
 
