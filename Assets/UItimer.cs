@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UItimer : MonoBehaviour
 {
-    float time = 7f;
+    float time = 10f;
  
     void Start()
     {

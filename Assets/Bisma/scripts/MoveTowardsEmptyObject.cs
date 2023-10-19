@@ -53,6 +53,8 @@ public class FloatingOrb : MonoBehaviour
         {
             rb.velocity = floatingDirection * floatSpeed;
         }
+        // Update the canvas instance's transform to match the parent's transform
+        UpdateCanvasTransform();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -92,7 +94,14 @@ public class FloatingOrb : MonoBehaviour
         canvasInstance.SetActive(true);
 
         // Start a coroutine to destroy the canvas instance after 4 seconds
-        StartCoroutine(DestroyCanvasDelayed(4.0f));
+        StartCoroutine(DestroyCanvasDelayed(2.0f));
+    }
+
+    void UpdateCanvasTransform()
+    {
+        // Update the canvas instance's position and rotation to match the parent's transform
+        canvasInstance.transform.position = transform.position;
+        canvasInstance.transform.rotation = transform.rotation;
     }
 
     IEnumerator DestroyCanvasDelayed(float delayInSeconds)
