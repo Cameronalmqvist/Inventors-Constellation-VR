@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class FloatingOrb : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class FloatingOrb : MonoBehaviour
     public float maxGazedSpeed = 10.0f;
     public float floatSpeed = 1.0f;
     public float minDistanceFromTarget = 0.5f;
+    public UnityEvent onOrbTouched;
 
     public GameObject canvasPrefab; // Reference to the canvas prefab
 
@@ -65,6 +67,8 @@ public class FloatingOrb : MonoBehaviour
         }
     }
 
+ 
+
     void PickRandomDirection()
     {
         floatingDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
@@ -75,6 +79,12 @@ public class FloatingOrb : MonoBehaviour
         Debug.Log("Gaze Entered");
         isGazedUpon = true;
         canvasInstance.SetActive(false);
+    }
+    
+    public void HandleInteraction()
+    {
+        Debug.Log("The ORB WAS TOUCHED");
+        onOrbTouched?.Invoke();
     }
 
     void OnGazeExit(XRBaseInteractor interactor)
