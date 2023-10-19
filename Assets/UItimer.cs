@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class UItimer : MonoBehaviour
 {
-    float time = 7f;
- 
+    public GameObject objectToActivate; // Reference to the GameObject to activate
+    public float time = 10f;
+
     void Start()
     {
-        Invoke("Hide",time);
+        Invoke("Hide", time);
     }
 
-    // Update is called once per frame
     void Hide()
     {
         Destroy(gameObject);
+
+        // Activate the other GameObject
+        if (objectToActivate != null)
+        {
+            objectToActivate.SetActive(true);
+        }
     }
 }
+
