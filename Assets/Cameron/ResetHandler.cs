@@ -1,11 +1,18 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 
 public class ResetHandler : MonoBehaviour
 {
+    public ScreenFader screenFader; 
     public ActionBasedController controller;
     private bool wasPressedLastFrame;
+
+    void Start()
+    {
+        screenFader = FindObjectOfType<ScreenFader>();
+    }
 
     void Update()
     {
@@ -21,6 +28,20 @@ public class ResetHandler : MonoBehaviour
 
     void ResetExperience()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(ResetCoroutine());
     }
+
+    private IEnumerator ResetCoroutine()
+    {
+        
+        screenFader.FadeOut();
+        yield return new WaitForSeconds(1);
+
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        
+        screenFader.FadeIn();
+    }
+
 }
