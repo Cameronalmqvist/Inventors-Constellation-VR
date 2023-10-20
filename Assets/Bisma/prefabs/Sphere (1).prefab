@@ -618,7 +618,6 @@ GameObject:
   - component: {fileID: 71328421719731714}
   - component: {fileID: 5573893159286832618}
   - component: {fileID: 2045984093676430580}
-  - component: {fileID: 7819115092384690620}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Orb
@@ -815,26 +814,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7819115092384690620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620476104744024890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453603a8d8960ae45809156ee36c2361, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  normalSpeed: 0.1
-  gazedSpeed: 1
-  amplitude: 0.1
-  floatSpeed: 0.1
-  boundaryMin: {x: 1, y: 1, z: 1}
-  boundaryMax: {x: 10, y: 10, z: 10}
-  currentSpeed: 0
 --- !u!1 &663275554489698551
 GameObject:
   m_ObjectHideFlags: 0
