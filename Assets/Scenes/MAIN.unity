@@ -19057,7 +19057,7 @@ MonoBehaviour:
   - {fileID: 9165340259871531789}
   - {fileID: 9165340260959614414}
   - {fileID: 2036474724}
-  delayBetweenOrbs: 5
+  delayBetweenOrbs: 25
   outroUI: {fileID: 1650078206}
 --- !u!1001 &1270337248
 PrefabInstance:
@@ -27420,12 +27420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db72842762d16a4787c560de2b5b5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 3
-  musicObject: {fileID: 393397527}
-  uiObject: {fileID: 1339409991}
-  xrRigObject: {fileID: 834023700}
-  additionalObject1: {fileID: 832575517}
-  additionalObject2: {fileID: 410087039}
+  fadeDuration: 7
+  objectToDestroy1: {fileID: 1404566735}
+  objectToDestroy2: {fileID: 1888178823}
 --- !u!1 &1653339065
 GameObject:
   m_ObjectHideFlags: 0

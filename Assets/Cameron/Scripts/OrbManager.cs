@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OrbManager : MonoBehaviour
 {
@@ -26,7 +25,8 @@ public class OrbManager : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenOrbs);
         }
 
-        // After all orbs have been activated, show the outro UI
+        // After all orbs have been activated, wait for 20 seconds before showing the outro UI
+        yield return new WaitForSeconds(20f);
         ShowOutroUI();
     }
 
@@ -39,13 +39,6 @@ public class OrbManager : MonoBehaviour
     void ShowOutroUI()
     {
         outroUI.SetActive(true);
-
-        // After the outro UI is shown, start the fade-in effect
-        FadeToBlack fadeToBlackScript = outroUI.GetComponent<FadeToBlack>();
-        if (fadeToBlackScript != null)
-        {
-            fadeToBlackScript.StartFadeIn();
-        }
+        fadeToBlackScript.StartFadeIn();
     }
-
 }
