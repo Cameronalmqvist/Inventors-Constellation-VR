@@ -4,6 +4,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class LerpFloatingOrb : MonoBehaviour
 {
+    [Header("Random Floating Parameters")]
+    public float floatSpeed = 0.5f;
+    public float changeDirectionInterval = 2.0f;
+
+    private Vector3 currentRandomDirection;
+    private float timeInCurrentDirection = 0f;
+
     [Header("Lerp Parameters")]
     public Transform playerTransform;
     public float lerpSpeed = 1f;
@@ -20,6 +27,13 @@ public class LerpFloatingOrb : MonoBehaviour
     private bool isAtTarget = false;
     private float timeAtTarget = 0f;
     private GameObject spawnedPrefab;
+    private Vector3 nextRandomDirection;
+    Vector3 previousRandomDirection;
+
+    private void Start()
+    {
+        PickNewRandomDirection();
+    }
 
     private void Awake()
     {
@@ -40,6 +54,10 @@ public class LerpFloatingOrb : MonoBehaviour
                 isAtTarget = true;
             }
         }
+        else
+        {
+            FloatRandomly();
+        }
 
         if (isAtTarget)
         {
@@ -51,6 +69,8 @@ public class LerpFloatingOrb : MonoBehaviour
             }
         }
     }
+
+
 
     public void StartLerping()
     {
@@ -66,5 +86,29 @@ public class LerpFloatingOrb : MonoBehaviour
     private void HandleOrbTouched(XRBaseInteractor interactor)
     {
         onOrbTouched?.Invoke();
+    }
+
+    void FloatRandomly()
+    {
+        transform.position += currentRandomDirection * floatSpeed * Time.deltaTime;
+        timeInCurrentDirection += Time.deltaTime;
+
+        if (timeInCurrentDirection > changeDirectionInterval)
+        {
+            previousRandomDirection = currentRandomDirection;
+            PickNewRandomDirection();
+            timeInCurrentDirection = 0f;
+        }
+        else
+        {
+            // Slerp between the current direction and the next one for smoother transitions
+            currentRandomDirection = Vector3.Slerp(previousRandomDirection, nextRandomDirection, timeInCurrentDirection / changeDirectionInterval);
+        }
+    }
+
+
+    void PickNewRandomDirection()
+    {
+        nextRandomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 }
