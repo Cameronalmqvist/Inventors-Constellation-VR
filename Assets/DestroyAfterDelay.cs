@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DestroyAfterDelay : MonoBehaviour
 {
-    public float delay = 30.0f;
+    public float delay = 29.0f;
 
     void Start()
     {
