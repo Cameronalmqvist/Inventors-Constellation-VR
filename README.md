@@ -13,10 +13,9 @@ Welcome to 'Inventor's Constellation,' where a tranquil cosmic odyssey awaits. T
 To experience "Inventor's Constellation" VR, you'll need the following:
 - A compatible VR headset (e.g., Oculus Rift, HTC Vive, or any other VR device supported by the Unity engine).
 - A computer with the necessary system requirements.
-- Unity 3D installed on your computer (version X.X.X or higher).
+- Unity 3D installed on your computer (version 2022.3.5f1 or higher).
 
 ## Requirements
-- Unity version 2020 -> 
 - OpenXR
 - XR Interaction Toolkit
 - XR Hands
@@ -24,7 +23,7 @@ To experience "Inventor's Constellation" VR, you'll need the following:
 
 ## Installation
 1. Clone this repository to your local machine.
-1
+
 ```bash
 git clone https://github.com/yourusername/inventors-constellation-vr.git
 ```
